@@ -3,12 +3,12 @@
 set -eu
 
 if [ -z "${KERBEROS_REALM:-}" ]; then
-    echo 'ERR: Failed to start, missing $KERBEROS_REALM' 1>&2
+    echo "ERR: Failed to start, missing \$KERBEROS_REALM" 1>&2
     exit 1
 fi
 
 if [ -z "${KERBEROS_KDC:-}" ]; then
-    echo 'ERR: Failed to start, missing $KERBEROS_KDC' 1>&2
+    echo "ERR: Failed to start, missing \$KERBEROS_KDC" 1>&2
     exit 1
 fi
 
