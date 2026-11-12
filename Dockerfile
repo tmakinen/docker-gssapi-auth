@@ -12,7 +12,7 @@ RUN set -eux ; \
     rm -rf /var/lib/apt/lists/*
 
 RUN set -eux ; \
-    find / \! \( -path /proc -prune -o -path /sys -prune \) -perm /06000 -type f -exec chmod -v a-s {} \;
+    find / -xdev -perm /06000 -type f -exec chmod -v a-s {} \;
 
 RUN set -eux ; \
     a2enmod auth_gssapi headers rewrite
